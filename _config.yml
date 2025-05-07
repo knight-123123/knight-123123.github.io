@@ -1,7 +1,24 @@
+# 站点设置
+title: "周周游的技术博客"
+description: "一个关于算法、编程挑战和Web开发的博客"
+url: "https://knight-123123.github.io"
+baseurl: "/knight-123123.github.io"  # 项目名称，请根据你的实际仓库名修改
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title.html
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# 集合
 collections:
   authors:
     output: true
 
+# 默认布局
 defaults:
   - scope:
       path: ""
@@ -18,24 +35,5 @@ defaults:
     values:
       layout: "default"
 
-# Site settings
-title: Zhou Zhouyou's Technical Blog
-description: A blog about algorithms, programming challenges, and web development
-url: https://yoursite.com
-baseurl: ""
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-# Navigation
+# 导航
 include: ['_pages']
-
-# Collections
-collections:
-  authors:
-    output: true

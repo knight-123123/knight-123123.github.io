@@ -1,18 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>My Home | Zhou Zhouyou's Technical Blog</title>
+    <meta name="description" content="A blog about algorithms, programming challenges, and web development">
+    
+    <!-- Open Graph 标签 -->
+    <meta property="og:title" content="My Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:description" content="A blog about algorithms, programming challenges, and web development">
+    <meta property="og:site_name" content="Zhou Zhouyou's Technical Blog">
+    
+    <!-- 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 自定义样式 -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" href="/assets/images/favicon.png">
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
       <div class="container">
         <nav class="site-nav">
-          <a href="/" class="site-title">ZZY's Blog</a>
+          <a href="/" class="site-title">
+            <span class="logo-text">ZZY</span><span class="accent">博客</span>
+          </a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle">
+          <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+          </label>
           <ul class="nav-links">
             
               <li>
@@ -43,103 +62,156 @@
     <main class="page-content">
       <div class="container">
         <div class="hero-section">
-  <h1 class="hero-title">Welcome to My Technical Blog</h1>
-  <p class="hero-subtitle">Solving problems and sharing knowledge</p>
+  <h1 class="hero-title">欢迎来到我的技术博客</h1>
+  <p class="hero-subtitle">解决问题，分享知识</p>
 </div>
 
 <div class="home-content">
   <div class="featured-posts">
-    <h2>Latest Articles</h2>
+    <h2>最新文章</h2>
     <div class="featured-posts-grid">
       
         <div class="featured-post-card">
-          <h3><a href="/algorithms/programming/2025/05/07/myblog.html">Myblog</a></h3>
-          <p class="post-meta">
-            07 May 2025
-            
-            
-              by <a href="/authors/zzy.html">Zhou Zhouyou</a>
-            
-          </p>
+          <div class="post-top">
+            <h3><a href="/algorithms/programming/2025/05/07/myblog.html">Myblog</a></h3>
+            <div class="post-meta">
+              <span class="meta-item">
+                <i class="far fa-calendar-alt"></i>
+                2025-05-07
+              </span>
+              
+              
+                <span class="meta-item">
+                  <i class="far fa-user"></i>
+                  <a href="/authors/zzy.html">Zhou Zhouyou</a>
+                </span>
+              
+            </div>
+          </div>
           <div class="post-excerpt">
             <h2 id="接雨水问题">接雨水问题：</h2>
 
-            <a href="/algorithms/programming/2025/05/07/myblog.html" class="read-more">Read more →</a>
+            <a href="/algorithms/programming/2025/05/07/myblog.html" class="read-more">阅读更多</a>
           </div>
         </div>
       
         <div class="featured-post-card">
-          <h3><a href="/2018/08/22/kiwifruit.html">Kiwifruit</a></h3>
-          <p class="post-meta">
-            22 Aug 2018
-            
-            
-              by <a href="/authors/ted.html">Ted Doe</a>
-            
-          </p>
+          <div class="post-top">
+            <h3><a href="/2018/08/22/kiwifruit.html">Kiwifruit</a></h3>
+            <div class="post-meta">
+              <span class="meta-item">
+                <i class="far fa-calendar-alt"></i>
+                2018-08-22
+              </span>
+              
+              
+                <span class="meta-item">
+                  <i class="far fa-user"></i>
+                  <a href="/authors/ted.html">Ted Doe</a>
+                </span>
+              
+            </div>
+          </div>
           <div class="post-excerpt">
             <p>Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
 edible berry of several species of woody vines in the genus Actinidia.</p>
 
-            <a href="/2018/08/22/kiwifruit.html" class="read-more">Read more →</a>
+            <a href="/2018/08/22/kiwifruit.html" class="read-more">阅读更多</a>
           </div>
         </div>
       
         <div class="featured-post-card">
-          <h3><a href="/2018/08/21/apples.html">Apples</a></h3>
-          <p class="post-meta">
-            21 Aug 2018
-            
-            
-              by <a href="/authors/jill.html">Jill Smith</a>
-            
-          </p>
+          <div class="post-top">
+            <h3><a href="/2018/08/21/apples.html">Apples</a></h3>
+            <div class="post-meta">
+              <span class="meta-item">
+                <i class="far fa-calendar-alt"></i>
+                2018-08-21
+              </span>
+              
+              
+                <span class="meta-item">
+                  <i class="far fa-user"></i>
+                  <a href="/authors/jill.html">Jill Smith</a>
+                </span>
+              
+            </div>
+          </div>
           <div class="post-excerpt">
             <p>An apple is a sweet, edible fruit produced by an apple tree.</p>
 
-            <a href="/2018/08/21/apples.html" class="read-more">Read more →</a>
+            <a href="/2018/08/21/apples.html" class="read-more">阅读更多</a>
           </div>
         </div>
       
     </div>
     <div class="view-all">
-      <a href="/blog.html" class="btn">View All Posts</a>
+      <a href="/blog.html" class="btn">查看所有文章</a>
     </div>
   </div>
   
   <div class="about-section">
-    <h2>About This Site</h2>
-    <p>This is a technical blog focused on programming problems, algorithms, and web development. Here, I share my solutions to coding challenges and document my learning journey.</p>
-    <a href="/about.html" class="btn">Learn More About Me</a>
+    <h2>关于本站</h2>
+    <p>这是一个专注于编程问题、算法和Web开发的技术博客。在这里，我分享我对编程挑战的解决方案，并记录我的学习历程。</p>
+    <p>我希望通过这个博客，能帮助到其他正在学习编程的朋友，也为自己构建一个知识库。</p>
+    <a href="/about.html" class="btn">了解更多</a>
   </div>
 </div>
       </div>
     </main>
 
     <footer class="site-footer">
+      <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#4a6fa5" fill-opacity="0.1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
       <div class="container">
-        <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-        </ul>
-        <p>&copy; 2025 Zhou Zhouyou. All rights reserved.</p>
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3 class="footer-title">关于博客</h3>
+            <p>这是一个关于编程、算法和个人学习笔记的技术博客。</p>
+          </div>
+          <div class="footer-section links">
+            <h3 class="footer-title">快速链接</h3>
+            <ul class="footer-links">
+              <li><a href="/">首页</a></li>
+              <li><a href="/about.html">关于</a></li>
+              <li><a href="/blog.html">博客</a></li>
+              <li><a href="/categories.html">分类</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact">
+            <h3 class="footer-title">联系方式</h3>
+            <p><i class="fas fa-envelope"></i> example@email.com</p>
+            <p><i class="fab fa-github"></i> github.com/knight-123123</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Zhou Zhouyou. All rights reserved.</p>
+        </div>
       </div>
     </footer>
 
-    <button id="back-to-top" title="Back to Top">↑</button>
+    <button id="back-to-top" title="回到顶部"><i class="fas fa-arrow-up"></i></button>
 
     <script>
+      // 滚动效果
+      const header = document.getElementById("site-header");
       const backToTopButton = document.getElementById("back-to-top");
       
       window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        // 头部滚动阴影效果
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          header.classList.add("scrolled");
           backToTopButton.style.display = "block";
         } else {
+          header.classList.remove("scrolled");
           backToTopButton.style.display = "none";
         }
       };
       
+      // 回到顶部按钮
       backToTopButton.addEventListener("click", function() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

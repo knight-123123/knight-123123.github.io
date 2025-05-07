@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Categories
+title: categories
 ---
 <div class="page-header">
-  <h1>Post Categories</h1>
-  <p>Browse articles by topic</p>
+  <h1>文章分类</h1>
+  <p>按主题浏览文章</p>
 </div>
 
 <div class="categories-container">
@@ -15,7 +15,7 @@ title: Categories
       {% for category in categories %}
         {% assign category_name = category | first %}
         <li>
-          <a href="#{{ category_name | slugify }}" class="category-link">
+          <a href="#{{ category_name | slugify }}" class="category-link" id="category-link-{{ category_name | slugify }}">
             {{ category_name }}
             <span class="category-count">{{ site.categories[category_name].size }}</span>
           </a>
@@ -27,23 +27,30 @@ title: Categories
   <div class="category-content">
     {% for category in categories %}
       {% assign category_name = category | first %}
-      <div id="{{ category_name | slugify }}" class="category-section">
+      <div id="{{ category_name | slugify }}" class="category-section" data-category="{{ category_name | slugify }}">
         <h2 class="category-title">{{ category_name }}</h2>
         
         <ul class="post-list">
           {% for post in site.categories[category_name] %}
             <li class="post-item">
-              <a href="{{ post.url }}" class="post-link">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
                 <h3 class="post-title">{{ post.title }}</h3>
-                <p class="post-meta">
-                  {{ post.date | date_to_string }}
+                <div class="post-meta">
+                  <span class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ post.date | date: "%Y-%m-%d" }}
+                  </span>
                   {% assign author = site.authors | where: 'short_name', post.author | first %}
                   {% if author %}
-                    by <a href="{{ author.url }}">{{ author.name }}</a>
+                    <span class="meta-item">
+                      <i class="far fa-user"></i>
+                      <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+                    </span>
                   {% endif %}
-                </p>
+                </div>
                 <div class="post-excerpt">
                   {{ post.excerpt | truncatewords: 20 }}
+                  <span class="read-more">阅读更多</span>
                 </div>
               </a>
             </li>
@@ -56,42 +63,55 @@ title: Categories
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Show the first category by default
+    // 默认显示第一个分类
     const firstCategory = document.querySelector('.category-section');
-    if (firstCategory) {
+    const firstCategoryLink = document.querySelector('.category-link');
+    
+    if (firstCategory && firstCategoryLink) {
       firstCategory.classList.add('active');
+      firstCategoryLink.classList.add('active');
     }
     
-    // Add click listeners to category links
+    // 为分类链接添加点击事件
     const categoryLinks = document.querySelectorAll('.category-link');
     categoryLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Hide all category sections
+        // 获取目标分类ID
+        const targetId = this.getAttribute('href').substring(1);
+        
+        // 移除所有分类区域的活动状态
         const categorySections = document.querySelectorAll('.category-section');
         categorySections.forEach(section => {
           section.classList.remove('active');
         });
         
-        // Show the clicked category section
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.classList.add('active');
-        }
-        
-        // Update active state on tabs
+        // 移除所有分类链接的活动状态
         categoryLinks.forEach(link => {
           link.classList.remove('active');
         });
+        
+        // 添加目标分类和链接的活动状态
+        document.getElementById(targetId).classList.add('active');
         this.classList.add('active');
+        
+        // 如果是移动设备，滚动到分类内容
+        if (window.innerWidth <= 768) {
+          const categoryContent = document.querySelector('.category-content');
+          categoryContent.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
     
-    // Set the first tab as active by default
-    if (categoryLinks.length > 0) {
-      categoryLinks[0].classList.add('active');
+    // 检查URL哈希值，如果存在，激活相应分类
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const targetLink = document.getElementById(`category-link-${hash}`);
+      
+      if (targetLink) {
+        targetLink.click();
+      }
     }
   });
 </script>

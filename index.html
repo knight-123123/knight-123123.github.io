@@ -4,39 +4,48 @@ title: My Home
 ---
 
 <div class="hero-section">
-  <h1 class="hero-title">Welcome to My Technical Blog</h1>
-  <p class="hero-subtitle">Solving problems and sharing knowledge</p>
+  <h1 class="hero-title">欢迎来到我的技术博客</h1>
+  <p class="hero-subtitle">解决问题，分享知识</p>
 </div>
 
 <div class="home-content">
   <div class="featured-posts">
-    <h2>Latest Articles</h2>
+    <h2>最新文章</h2>
     <div class="featured-posts-grid">
       {% for post in site.posts limit:3 %}
         <div class="featured-post-card">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p class="post-meta">
-            {{ post.date | date_to_string }}
-            {% assign author = site.authors | where: 'short_name', post.author | first %}
-            {% if author %}
-              by <a href="{{ author.url }}">{{ author.name }}</a>
-            {% endif %}
-          </p>
+          <div class="post-top">
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="post-meta">
+              <span class="meta-item">
+                <i class="far fa-calendar-alt"></i>
+                {{ post.date | date: "%Y-%m-%d" }}
+              </span>
+              {% assign author = site.authors | where: 'short_name', post.author | first %}
+              {% if author %}
+                <span class="meta-item">
+                  <i class="far fa-user"></i>
+                  <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+                </span>
+              {% endif %}
+            </div>
+          </div>
           <div class="post-excerpt">
             {{ post.excerpt | truncatewords: 30 }}
-            <a href="{{ post.url }}" class="read-more">Read more →</a>
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读更多</a>
           </div>
         </div>
       {% endfor %}
     </div>
     <div class="view-all">
-      <a href="/blog.html" class="btn">View All Posts</a>
+      <a href="{{ site.baseurl }}/blog.html" class="btn">查看所有文章</a>
     </div>
   </div>
   
   <div class="about-section">
-    <h2>About This Site</h2>
-    <p>This is a technical blog focused on programming problems, algorithms, and web development. Here, I share my solutions to coding challenges and document my learning journey.</p>
-    <a href="/about.html" class="btn">Learn More About Me</a>
+    <h2>关于本站</h2>
+    <p>这是一个专注于编程问题、算法和Web开发的技术博客。在这里，我分享我对编程挑战的解决方案，并记录我的学习历程。</p>
+    <p>我希望通过这个博客，能帮助到其他正在学习编程的朋友，也为自己构建一个知识库。</p>
+    <a href="{{ site.baseurl }}/about.html" class="btn">了解更多</a>
   </div>
 </div>
