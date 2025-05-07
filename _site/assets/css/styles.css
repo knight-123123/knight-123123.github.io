@@ -571,7 +571,7 @@ a:hover {
   background-color: #4a6fa5;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* 首页样式 */
@@ -808,18 +808,18 @@ a:hover {
   font-size: 0.9rem;
   transition: all 0.3s ease;
   border: none;
-  box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .btn:hover {
   background: linear-gradient(to right, rgb(66.1046025105, 99.1569037657, 147.3953974895), rgb(80.323943662, 191.176056338, 164.3028169014));
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(74, 111, 165, 0.4);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   text-decoration: none;
   color: white;
 }
 .btn:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 5px rgba(74, 111, 165, 0.4);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* 关于页面样式 */
@@ -920,7 +920,7 @@ a:hover {
   font-weight: 600;
   color: white;
   background-color: #4a6fa5;
-  box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .category-tabs .category-link.active .category-count {
   background-color: white;
@@ -985,7 +985,7 @@ a:hover {
   background-color: #4a6fa5;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(74, 111, 165, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
 
@@ -1075,7 +1075,7 @@ a:hover {
   justify-content: center;
   font-size: 3rem;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgba(74, 111, 165, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .author-info {
@@ -1130,7 +1130,7 @@ a:hover {
   background-color: #4a6fa5;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(74, 111, 165, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .author-content {

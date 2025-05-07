@@ -1,8 +1,8 @@
 # 站点设置
-title: "周周游的技术博客"
+title: "周洲有的技术博客"
 description: "一个关于算法、编程挑战和Web开发的博客"
 url: "https://knight-123123.github.io"
-baseurl: "/knight-123123.github.io"  # 项目名称，请根据你的实际仓库名修改
+baseurl: "" 
 
 # 构建设置
 markdown: kramdown
