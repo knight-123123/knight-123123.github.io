@@ -132,7 +132,7 @@ a {
     
     .post-link {
       display: block;
-      padding: 1.8rem;
+      padding: 2rem; /* 增加内边距 */
       color: inherit;
       
       &:hover {
@@ -144,6 +144,8 @@ a {
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #5a7ca6;
+      padding-left: 1rem; /* 添加左内边距 */
+      padding-right: 1rem; /* 添加右内边距 */
     }
     
     .post-meta {
@@ -151,6 +153,8 @@ a {
       color: #a0aec0;
       margin-bottom: 1.2rem;
       padding-bottom: 0.8rem;
+      padding-left: 1rem; /* 添加左内边距 */
+      padding-right: 1rem; /* 添加右内边距 */
       
       a {
         color: #7e9ec9;
@@ -161,6 +165,9 @@ a {
     .post-excerpt {
       color: #707070;
       margin-top: 1.2rem;
+      padding-left: 1rem; /* 添加左内边距 */
+      padding-right: 1rem; /* 添加右内边距 */
+      padding-bottom: 1rem; /* 添加底部内边距 */
     }
   }
 }
@@ -204,7 +211,7 @@ a {
 /* Individual Posts */
 .post {
   background-color: white;
-  padding: 2.5rem; // 保留这个整体内边距
+  padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
   
@@ -215,8 +222,8 @@ a {
       font-size: 2.2rem;
       color: #5a7ca6;
       margin-bottom: 1rem;
-      // 如果标题也感觉太靠左，可以考虑在这里添加 padding-left:
-      // padding-left: 0.5rem; /* 例如，但通常 .post 的 padding 应该足够 */
+      padding-left: 1rem; /* 添加左内边距 */
+      padding-right: 1rem; /* 添加右内边距 */
     }
     
     .post-meta {
@@ -225,16 +232,15 @@ a {
       padding-bottom: 1rem;
       border-bottom: 1px solid #edf2f7;
       margin-bottom: 1rem;
-      // 如果作者信息部分也感觉太靠左（即使在 .post 的 padding 内），可以考虑添加:
-      // padding-left: 0.5rem; /* 例如 */
+      padding-left: 1rem; /* 添加左内边距 */
+      padding-right: 1rem; /* 添加右内边距 */
     }
   }
   
   .post-content {
-    // 新增：为正文内容区域添加左内边距
-    padding-left: 1rem;  /* 您可以调整这个值，例如 0.5rem, 1em 等 */
-    // 新增：为正文内容区域添加底部内边距
-    padding-bottom: 2rem; /* 您可以调整这个值，确保内容下方有足够空间 */
+    padding-left: 2rem;  /* 增加左内边距 */
+    padding-right: 2rem; /* 添加右内边距 */
+    padding-bottom: 3rem; /* 增加底部内边距 */
 
     h2 {
       font-size: 1.8rem;
@@ -260,11 +266,8 @@ a {
     }
     
     ul, ol {
-      margin: 1rem 0 1.2rem 2rem; // 注意这里的 margin-left 已经是 2rem，它会使列表向右缩进
+      margin: 1rem 0 1.2rem 2rem;
       color: #666;
-      // 如果列表项感觉还是太靠左（相对于非列表的段落），
-      // 可以考虑调整这里的 margin-left 或者给 ul/ol 添加额外的 padding-left:
-      // padding-left: 0.5rem; /* 例如，但这会进一步缩进 */
     }
     
     img {
@@ -283,8 +286,7 @@ a {
       border: 1px solid #edf2f7;
     }
     
-    // 单行代码块的样式
-    code:not(pre > code) { // 更精确地定位不在 pre 标签内的 code 元素
+    code:not(pre > code) {
       background-color: #f8f9fc;
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
@@ -293,27 +295,16 @@ a {
       color: #5a7ca6;
       border: 1px solid #edf2f7;
     }
-    
-    // 如果 pre > code 也需要特定但不同的样式，可以单独定义
-    pre > code {
-        // pre 元素已经有 padding，所以 pre > code 通常不需要额外的 padding
-        // 但如果需要，可以取消注释并修改：
-        // padding: 0; // 通常不需要，或者设置为你需要的值
-        // background-color: transparent; // 通常 pre 的背景色已经设置
-        // border: none; // 通常 pre 的边框已经设置
-        // color: inherit; // 继承 pre 中设置的代码颜色，或者单独设置
-    }
 
     blockquote {
       border-left: 4px solid #c4d7f2;
-      padding-left: 1rem; // blockquote 已有左内边距
+      padding-left: 1rem;
       color: #888;
       margin: 1.5rem 0;
       background-color: #fafcff;
-      padding-top: 1rem;    // 将 padding: 1rem; 分开写，确保所有方向都有
+      padding-top: 1rem;
       padding-bottom: 1rem;
       padding-right: 1rem; 
-      // padding-left 已有，所以上面是 1rem
       border-radius: 0 8px 8px 0;
     }
   }
@@ -400,6 +391,8 @@ a {
   h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    padding-left: 1rem; /* 添加左内边距 */
+    padding-right: 1rem; /* 添加右内边距 */
     
     a {
       color: #5a7ca6;
@@ -410,10 +403,15 @@ a {
     font-size: 0.85rem;
     color: #a0aec0;
     margin-bottom: 1rem;
+    padding-left: 1rem; /* 添加左内边距 */
+    padding-right: 1rem; /* 添加右内边距 */
   }
   
   .post-excerpt {
     color: #707070;
+    padding-left: 1rem; /* 添加左内边距 */
+    padding-right: 1rem; /* 添加右内边距 */
+    padding-bottom: 1rem; /* 添加底部内边距 */
     
     .read-more {
       display: inline-block;
@@ -507,6 +505,8 @@ a {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid #edf2f7;
+  padding-left: 1.5rem; /* 添加左内边距 */
+  padding-right: 1.5rem; /* 添加右内边距 */
   
   .post-navigation-links {
     display: flex;
@@ -540,11 +540,11 @@ a {
   }
 }
 
-.category-list { // 左侧的分类列表导航区域
+.category-list {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
-  padding: 1rem; // 已有内边距，通常足够
+  padding: 1rem; 
   position: sticky;
   top: 6rem;
   max-height: calc(100vh - 8rem);
@@ -569,7 +569,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 1rem; // 水平方向已有 1rem 内边距
+    padding: 0.6rem 1rem;
     border-radius: 8px;
     color: #5a7ca6;
     transition: background-color 0.3s ease;
@@ -598,22 +598,34 @@ a {
   }
 }
 
-.category-section { // 右侧显示具体分类内容的区域
+.category-section {
   display: none;
   
   &.active {
     display: block;
   }
 
-  padding-left: 1.5rem;  
-  padding-bottom: 2rem; 
+  padding-left: 2rem;  /* 增加左内边距 */
+  padding-right: 2rem; /* 添加右内边距 */
+  padding-bottom: 3rem; /* 增加底部内边距 */
   
   .category-title {
     font-size: 1.8rem;
-    margin-bottom: 1.5rem; // 标题下方的外边距
+    margin-bottom: 2rem; /* 增加下方间距 */
     color: #5a7ca6;
-    padding-bottom: 0.5rem; // 文本与下边框之间的内边距
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid #edf2f7;
+  }
+  
+  .post-list .post-item {
+    padding: 1.5rem; /* 添加内边距 */
+  }
+  
+  .post-list .post-item .post-title,
+  .post-list .post-item .post-meta,
+  .post-list .post-item .post-excerpt {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -816,6 +828,7 @@ tbody tr:hover {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #707070;
+  padding: 0 1.5rem; /* 增加内边距，替换内联样式 */
   
   p {
     margin-bottom: 1rem;
@@ -826,14 +839,16 @@ tbody tr:hover {
   padding: 2rem;
   
   h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* 增加下方间距 */
     font-size: 1.8rem;
     color: #5a7ca6;
+    padding-left: 1.5rem; /* 增加左内边距，替换内联样式 */
   }
   
   .no-posts {
     color: #a0aec0;
     font-style: italic;
+    padding-left: 1.5rem; /* 增加左内边距，替换内联样式 */
   }
 }
 
