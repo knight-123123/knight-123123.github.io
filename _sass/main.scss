@@ -41,7 +41,12 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+}
+
+/* 主页容器特殊样式 */
+.home-container {
+  padding: 2rem;
 }
 
 /* 导航 */
@@ -180,6 +185,7 @@ a {
   margin-bottom: 3rem;
   text-align: center;
   position: relative;
+  padding: 0 2rem;
   
   &::after {
     content: '';
@@ -208,7 +214,7 @@ a {
   }
 }
 
-/* 博客文章列表 */
+/* 博客文章列表 - 增加内边距 */
 .post-list {
   list-style: none;
   padding: 0;
@@ -230,7 +236,7 @@ a {
     .post-link {
       display: block;
       color: inherit;
-      padding: 2rem;
+      padding: 2rem; /* 确保这里有足够的内边距 */
       
       &:hover {
         text-decoration: none;
@@ -239,10 +245,11 @@ a {
     
     .post-title {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem; /* 减少与元数据的间距 */
       color: $primary-color;
       position: relative;
       padding-left: 1.5rem;
+      padding-right: 1.5rem; /* 添加右内边距 */
       
       &::before {
         content: '';
@@ -260,23 +267,14 @@ a {
     .post-meta {
       font-size: 0.9rem;
       color: #888;
+      margin-top: 0.5rem; /* 减少与标题的间距 */
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      
-      .meta-icon {
-        margin-right: 0.5rem;
-        color: $secondary-color;
-      }
-      
-      a {
-        color: $primary-color;
-        font-weight: 500;
-        
-        &:hover {
-          color: $accent-color;
-        }
-      }
+      flex-wrap: wrap; /* 确保在小屏幕上能够正确换行 */
+      gap: 0.5rem; /* 元素之间的间距 */
+      padding-left: 1.5rem; /* 增加左内边距 */
+      padding-right: 1.5rem; /* 增加右内边距 */
     }
     
     .post-excerpt {
@@ -284,6 +282,10 @@ a {
       line-height: 1.8;
       position: relative;
       overflow: hidden;
+      padding-left: 1.5rem; /* 增加左内边距 */
+      padding-right: 1.5rem; /* 增加右内边距 */
+      padding-bottom: 1.5rem; /* 增加底部内边距 */
+      margin-top: 1.5rem; /* 与元数据增加间距 */
       
       &::after {
         content: '';
@@ -329,6 +331,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  padding: 1.5rem;
   
   .staff-card {
     background-color: white;
@@ -431,7 +434,7 @@ a {
   }
 }
 
-/* 单篇文章 */
+/* 单篇文章 - 增加内边距 */
 .post {
   background-color: white;
   padding: 3rem;
@@ -441,6 +444,7 @@ a {
   .post-header {
     margin-bottom: 3rem;
     text-align: center;
+    padding: 0 2rem; /* 增加水平内边距 */
     
     h1 {
       font-size: 2.5rem;
@@ -457,6 +461,7 @@ a {
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      margin-top: 0.75rem; /* 减少与标题间距 */
       
       a {
         color: $primary-color;
@@ -483,6 +488,7 @@ a {
     color: #444;
     line-height: 1.8;
     font-size: 1.05rem;
+    padding: 0 2rem; /* 增加水平内边距 */
     
     h2 {
       font-size: 1.8rem;
@@ -621,6 +627,7 @@ a {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
+  padding: 0 2rem; /* 增加水平内边距 */
   
   a {
     display: flex;
@@ -673,11 +680,11 @@ a {
 /* 首页样式 */
 .hero-section {
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 2rem; /* 增加内边距 */
   background: linear-gradient(135deg, color.adjust($primary-color, $lightness: 30%) 0%, color.adjust($secondary-color, $lightness: 20%) 100%);
   color: white;
   margin-bottom: 4rem;
-  border-radius: 0 0 50% 50% / 10%;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -738,6 +745,7 @@ a {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
+  padding: 0 1.5rem; /* 增加内边距 */
 }
 
 .featured-posts {
@@ -817,6 +825,7 @@ a {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-top: 0.5rem; /* 减少与标题间距 */
     
     .meta-item {
       display: flex;
@@ -956,6 +965,7 @@ a {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 3rem;
+  margin: 0 1.5rem; /* 增加外边距 */
   
   .about-section, .skills-section, .contact-section {
     margin-bottom: 3rem;
@@ -1019,6 +1029,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 2rem;
+  padding: 1.5rem; /* 增加容器的内边距 */
 }
 
 .category-list {
@@ -1082,6 +1093,10 @@ a {
 
 .category-section {
   display: none;
+  background-color: white; /* 添加背景色 */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem; /* 增加内边距 */
   
   &.active {
     display: block;
@@ -1189,6 +1204,7 @@ a {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  margin: 0 1.5rem; /* 增加外边距 */
 }
 
 .author-header {

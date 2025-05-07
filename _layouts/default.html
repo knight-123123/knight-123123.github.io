@@ -44,7 +44,7 @@
     </header>
 
     <main class="page-content">
-      <div class="container">
+      <div class="container {% if page.url == '/' %}home-container{% endif %}">
         {{ content }}
       </div>
     </main>
@@ -107,12 +107,4 @@
       });
     </script>
   </body>
-
-  <!-- 在页面底部添加，仅用于调试 -->
-  <div style="display:block; margin: 20px; padding: 10px; background: #f5f5f5; border: 1px solid #ddd; font-family: monospace; font-size: 14px;">
-    <p>当前页面URL: {{ page.url }}</p>
-    <p>站点 baseurl: {{ site.baseurl }}</p>
-    <p>完整URL: {{ site.url }}{{ site.baseurl }}{{ page.url }}</p>
-  </div>
-
 </html>

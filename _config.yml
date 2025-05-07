@@ -2,12 +2,12 @@
 title: "周洲有的技术博客"
 description: "一个关于算法、编程挑战和Web开发的博客"
 url: "https://knight-123123.github.io"
-baseurl: "" 
+baseurl: ""  # 确保为空，按照你的GitHub仓库配置
 
 # 构建设置
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:year/:month/:day/:title.html
+permalink: /:categories/:year/:month/:day/:title:output_ext
 
 kramdown:
   input: GFM

@@ -33,7 +33,12 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+}
+
+/* 主页容器特殊样式 */
+.home-container {
+  padding: 2rem;
 }
 
 /* 导航 */
@@ -155,6 +160,7 @@ a:hover {
   margin-bottom: 3rem;
   text-align: center;
   position: relative;
+  padding: 0 2rem;
 }
 .page-header::after {
   content: "";
@@ -180,7 +186,7 @@ a:hover {
   margin: 0 auto;
 }
 
-/* 博客文章列表 */
+/* 博客文章列表 - 增加内边距 */
 .post-list {
   list-style: none;
   padding: 0;
@@ -201,17 +207,18 @@ a:hover {
 .post-list .post-item .post-link {
   display: block;
   color: inherit;
-  padding: 2rem;
+  padding: 2rem; /* 确保这里有足够的内边距 */
 }
 .post-list .post-item .post-link:hover {
   text-decoration: none;
 }
 .post-list .post-item .post-title {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem; /* 减少与元数据的间距 */
   color: #4a6fa5;
   position: relative;
   padding-left: 1.5rem;
+  padding-right: 1.5rem; /* 添加右内边距 */
 }
 .post-list .post-item .post-title::before {
   content: "";
@@ -227,26 +234,24 @@ a:hover {
 .post-list .post-item .post-meta {
   font-size: 0.9rem;
   color: #888;
+  margin-top: 0.5rem; /* 减少与标题的间距 */
   margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
-}
-.post-list .post-item .post-meta .meta-icon {
-  margin-right: 0.5rem;
-  color: #63c6ae;
-}
-.post-list .post-item .post-meta a {
-  color: #4a6fa5;
-  font-weight: 500;
-}
-.post-list .post-item .post-meta a:hover {
-  color: #ff7e5f;
+  flex-wrap: wrap; /* 确保在小屏幕上能够正确换行 */
+  gap: 0.5rem; /* 元素之间的间距 */
+  padding-left: 1.5rem; /* 增加左内边距 */
+  padding-right: 1.5rem; /* 增加右内边距 */
 }
 .post-list .post-item .post-excerpt {
   color: #666;
   line-height: 1.8;
   position: relative;
   overflow: hidden;
+  padding-left: 1.5rem; /* 增加左内边距 */
+  padding-right: 1.5rem; /* 增加右内边距 */
+  padding-bottom: 1.5rem; /* 增加底部内边距 */
+  margin-top: 1.5rem; /* 与元数据增加间距 */
 }
 .post-list .post-item .post-excerpt::after {
   content: "";
@@ -285,6 +290,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  padding: 1.5rem;
 }
 .staff-list .staff-card {
   background-color: white;
@@ -370,7 +376,7 @@ a:hover {
   color: #4a6fa5;
 }
 
-/* 单篇文章 */
+/* 单篇文章 - 增加内边距 */
 .post {
   background-color: white;
   padding: 3rem;
@@ -380,6 +386,7 @@ a:hover {
 .post .post-header {
   margin-bottom: 3rem;
   text-align: center;
+  padding: 0 2rem; /* 增加水平内边距 */
 }
 .post .post-header h1 {
   font-size: 2.5rem;
@@ -395,6 +402,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 0.75rem; /* 减少与标题间距 */
 }
 .post .post-header .post-meta a {
   color: #4a6fa5;
@@ -415,6 +423,7 @@ a:hover {
   color: #444;
   line-height: 1.8;
   font-size: 1.05rem;
+  padding: 0 2rem; /* 增加水平内边距 */
 }
 .post .post-content h2 {
   font-size: 1.8rem;
@@ -533,6 +542,7 @@ a:hover {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
+  padding: 0 2rem; /* 增加水平内边距 */
 }
 .post-navigation a {
   display: flex;
@@ -577,11 +587,11 @@ a:hover {
 /* 首页样式 */
 .hero-section {
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 2rem; /* 增加内边距 */
   background: linear-gradient(135deg, rgb(173.5355648536, 191.8033472803, 218.4644351464) 0%, rgb(173.7042253521, 225.2957746479, 212.7887323944) 100%);
   color: white;
   margin-bottom: 4rem;
-  border-radius: 0 0 50% 50%/10%;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -636,6 +646,7 @@ a:hover {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
+  padding: 0 1.5rem; /* 增加内边距 */
 }
 
 .featured-posts h2 {
@@ -706,6 +717,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 0.5rem; /* 减少与标题间距 */
 }
 .featured-post-card .post-meta .meta-item {
   display: flex;
@@ -828,6 +840,7 @@ a:hover {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 3rem;
+  margin: 0 1.5rem; /* 增加外边距 */
 }
 .about-content .about-section, .about-content .skills-section, .about-content .contact-section {
   margin-bottom: 3rem;
@@ -883,6 +896,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 2rem;
+  padding: 1.5rem; /* 增加容器的内边距 */
 }
 
 .category-list {
@@ -940,6 +954,10 @@ a:hover {
 
 .category-section {
   display: none;
+  background-color: white; /* 添加背景色 */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem; /* 增加内边距 */
 }
 .category-section.active {
   display: block;
@@ -1051,6 +1069,7 @@ a:hover {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  margin: 0 1.5rem; /* 增加外边距 */
 }
 
 .author-header {
