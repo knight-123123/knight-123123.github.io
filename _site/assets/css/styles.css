@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* This is the correct way to include Sass files in Jekyll */
 /* Base styling */
 * {
   margin: 0;
