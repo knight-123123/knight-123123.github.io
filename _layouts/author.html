@@ -42,13 +42,13 @@ layout: default
   </div>
   
   <div class="author-content">
-    <div class="author-bio">
+    <div class="author-bio" style="padding: 0 0.5rem;">
       {{ content }}
     </div>
   </div>
   
   <div class="author-posts">
-    <h2>Posts by {{ page.name }}</h2>
+    <h2 style="padding-left: 0.5rem;">Posts by {{ page.name }}</h2>
     
     {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
     
@@ -67,7 +67,7 @@ layout: default
         {% endfor %}
       </ul>
     {% else %}
-      <p class="no-posts">No posts found.</p>
+      <p class="no-posts" style="padding-left: 0.5rem;">No posts found.</p>
     {% endif %}
   </div>
 </div>
