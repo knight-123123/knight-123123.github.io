@@ -1,12 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/images/favicon.png">
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+    <header class="site-header">
+      <div class="container">
+        <nav class="site-nav">
+          <a href="/" class="site-title">ZZY's Blog</a>
+          <ul class="nav-links">
+            {% for item in site.data.navigation %}
+              <li>
+                <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+        <p>&copy; {{ 'now' | date: "%Y" }} Zhou Zhouyou. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

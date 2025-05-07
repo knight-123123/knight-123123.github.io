@@ -2,14 +2,27 @@
 layout: default
 title: Staff
 ---
-<h1>Staff</h1>
+<div class="page-header">
+  <h1>Our Team</h1>
+  <p>Meet the people behind this website</p>
+</div>
 
-<ul>
+<div class="staff-list">
   {% for author in site.authors %}
-    <li>
-      <h2><a href="{{ author.url }}">{{ author.name }}</a></h2>
-      <h3>{{ author.position }}</h3>
-      <p>{{ author.content | markdownify }}</p>
-    </li>
+    <div class="staff-card">
+      <h2 class="staff-name"><a href="{{ author.url }}">{{ author.name }}</a></h2>
+      <h3 class="staff-position">{{ author.position }}</h3>
+      <div class="staff-bio">{{ author.content | markdownify }}</div>
+      
+      <div class="staff-posts">
+        <h4>Recent Posts</h4>
+        <ul>
+          {% assign filtered_posts = site.posts | where: 'author', author.short_name | limit: 2 %}
+          {% for post in filtered_posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
