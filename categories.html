@@ -1,0 +1,97 @@
+---
+layout: default
+title: Categories
+---
+<div class="page-header">
+  <h1>Post Categories</h1>
+  <p>Browse articles by topic</p>
+</div>
+
+<div class="categories-container">
+  {% assign categories = site.categories | sort %}
+  
+  <div class="category-list">
+    <ul class="category-tabs">
+      {% for category in categories %}
+        {% assign category_name = category | first %}
+        <li>
+          <a href="#{{ category_name | slugify }}" class="category-link">
+            {{ category_name }}
+            <span class="category-count">{{ site.categories[category_name].size }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  
+  <div class="category-content">
+    {% for category in categories %}
+      {% assign category_name = category | first %}
+      <div id="{{ category_name | slugify }}" class="category-section">
+        <h2 class="category-title">{{ category_name }}</h2>
+        
+        <ul class="post-list">
+          {% for post in site.categories[category_name] %}
+            <li class="post-item">
+              <a href="{{ post.url }}" class="post-link">
+                <h3 class="post-title">{{ post.title }}</h3>
+                <p class="post-meta">
+                  {{ post.date | date_to_string }}
+                  {% assign author = site.authors | where: 'short_name', post.author | first %}
+                  {% if author %}
+                    by <a href="{{ author.url }}">{{ author.name }}</a>
+                  {% endif %}
+                </p>
+                <div class="post-excerpt">
+                  {{ post.excerpt | truncatewords: 20 }}
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Show the first category by default
+    const firstCategory = document.querySelector('.category-section');
+    if (firstCategory) {
+      firstCategory.classList.add('active');
+    }
+    
+    // Add click listeners to category links
+    const categoryLinks = document.querySelectorAll('.category-link');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Hide all category sections
+        const categorySections = document.querySelectorAll('.category-section');
+        categorySections.forEach(section => {
+          section.classList.remove('active');
+        });
+        
+        // Show the clicked category section
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+        
+        // Update active state on tabs
+        categoryLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+    
+    // Set the first tab as active by default
+    if (categoryLinks.length > 0) {
+      categoryLinks[0].classList.add('active');
+    }
+  });
+</script>

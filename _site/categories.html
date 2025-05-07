@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/images/favicon.png">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="site-nav">
+          <a href="/" class="site-title">ZZY's Blog</a>
+          <ul class="nav-links">
+            
+              <li>
+                <a href="/" >Home</a>
+              </li>
+            
+              <li>
+                <a href="/about.html" >About</a>
+              </li>
+            
+              <li>
+                <a href="/blog.html" >Blog</a>
+              </li>
+            
+              <li>
+                <a href="/categories.html" class="current">Categories</a>
+              </li>
+            
+              <li>
+                <a href="/staff.html" >Staff</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="container">
+        <div class="page-header">
+  <h1>Post Categories</h1>
+  <p>Browse articles by topic</p>
+</div>
+
+<div class="categories-container">
+  
+  
+  <div class="category-list">
+    <ul class="category-tabs">
+      
+        
+        <li>
+          <a href="#algorithms" class="category-link">
+            Algorithms
+            <span class="category-count">1</span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="#programming" class="category-link">
+            Programming
+            <span class="category-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  <div class="category-content">
+    
+      
+      <div id="algorithms" class="category-section">
+        <h2 class="category-title">Algorithms</h2>
+        
+        <ul class="post-list">
+          
+            <li class="post-item">
+              <a href="/algorithms/programming/2025/05/07/myblog.html" class="post-link">
+                <h3 class="post-title">Myblog</h3>
+                <p class="post-meta">
+                  07 May 2025
+                  
+                  
+                    by <a href="/authors/zzy.html">Zhou Zhouyou</a>
+                  
+                </p>
+                <div class="post-excerpt">
+                  <h2 id="接雨水问题">接雨水问题：</h2>
+
+                </div>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+      
+      <div id="programming" class="category-section">
+        <h2 class="category-title">Programming</h2>
+        
+        <ul class="post-list">
+          
+            <li class="post-item">
+              <a href="/algorithms/programming/2025/05/07/myblog.html" class="post-link">
+                <h3 class="post-title">Myblog</h3>
+                <p class="post-meta">
+                  07 May 2025
+                  
+                  
+                    by <a href="/authors/zzy.html">Zhou Zhouyou</a>
+                  
+                </p>
+                <div class="post-excerpt">
+                  <h2 id="接雨水问题">接雨水问题：</h2>
+
+                </div>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Show the first category by default
+    const firstCategory = document.querySelector('.category-section');
+    if (firstCategory) {
+      firstCategory.classList.add('active');
+    }
+    
+    // Add click listeners to category links
+    const categoryLinks = document.querySelectorAll('.category-link');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Hide all category sections
+        const categorySections = document.querySelectorAll('.category-section');
+        categorySections.forEach(section => {
+          section.classList.remove('active');
+        });
+        
+        // Show the clicked category section
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+        
+        // Update active state on tabs
+        categoryLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+    
+    // Set the first tab as active by default
+    if (categoryLinks.length > 0) {
+      categoryLinks[0].classList.add('active');
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+        <p>&copy; 2025 Zhou Zhouyou. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+      const backToTopButton = document.getElementById("back-to-top");
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+      
+      backToTopButton.addEventListener("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      });
+    </script>
+  </body>
+</html>

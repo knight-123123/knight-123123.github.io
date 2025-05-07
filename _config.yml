@@ -17,3 +17,25 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Site settings
+title: Zhou Zhouyou's Technical Blog
+description: A blog about algorithms, programming challenges, and web development
+url: https://yoursite.com
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Navigation
+include: ['_pages']
+
+# Collections
+collections:
+  authors:
+    output: true

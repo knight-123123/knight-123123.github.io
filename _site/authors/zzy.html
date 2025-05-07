@@ -28,6 +28,10 @@
               </li>
             
               <li>
+                <a href="/categories.html" >Categories</a>
+              </li>
+            
+              <li>
                 <a href="/staff.html" >Staff</a>
               </li>
             
@@ -49,12 +53,22 @@
       <h2 class="author-position">Student</h2>
       
       
+      <div class="author-social">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
     </div>
   </div>
   
   <div class="author-content">
     <div class="author-bio">
-      <p>Zzy is the owner of this website.</p>
+      <p>Zzy is the owner of this website. A passionate programmer focused on algorithms and web development.</p>
 
     </div>
   </div>
@@ -68,7 +82,7 @@
       <ul class="post-list">
         
           <li class="post-item">
-            <a href="/2025/05/07/myblog.html" class="post-link">
+            <a href="/algorithms/programming/2025/05/07/myblog.html" class="post-link">
               <h3 class="post-title">Myblog</h3>
               <p class="post-meta">07 May 2025</p>
               <div class="post-excerpt">
@@ -95,5 +109,24 @@
         <p>&copy; 2025 Zhou Zhouyou. All rights reserved.</p>
       </div>
     </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+      const backToTopButton = document.getElementById("back-to-top");
+      
+      window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+      
+      backToTopButton.addEventListener("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      });
+    </script>
   </body>
 </html>
