@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.current {
-  color: green;
-}
-
 /* Base styling */
 * {
   margin: 0;
