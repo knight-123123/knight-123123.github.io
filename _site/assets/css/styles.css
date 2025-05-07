@@ -203,6 +203,10 @@ a:hover {
   border-bottom: 1px solid #edf2f7;
   margin-bottom: 1rem;
 }
+.post .post-content {
+  padding-left: 1rem; /* 您可以调整这个值，例如 0.5rem, 1em 等 */
+  padding-bottom: 2rem; /* 您可以调整这个值，确保内容下方有足够空间 */
+}
 .post .post-content h2 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
@@ -240,7 +244,7 @@ a:hover {
   margin: 1.5rem 0;
   border: 1px solid #edf2f7;
 }
-.post .post-content code {
+.post .post-content code:not(pre > code) {
   background-color: #f8f9fc;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
@@ -255,7 +259,9 @@ a:hover {
   color: #888;
   margin: 1.5rem 0;
   background-color: #fafcff;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
   border-radius: 0 8px 8px 0;
 }
 
@@ -515,6 +521,8 @@ a:hover {
 
 .category-section {
   display: none;
+  padding-left: 1.5rem;
+  padding-bottom: 2rem;
 }
 .category-section.active {
   display: block;
