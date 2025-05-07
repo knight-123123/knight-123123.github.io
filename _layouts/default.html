@@ -6,26 +6,22 @@
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     
-    <!-- Open Graph 标签 -->
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | relative_url | prepend: site.url }}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
     
-    <!-- 字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- 自定义样式 -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+    <link rel="icon" href="{{ "/assets/images/favicon.png" | relative_url }}">
   </head>
   <body>
     <header class="site-header" id="site-header">
       <div class="container">
         <nav class="site-nav">
-          <a href="{{ site.baseurl }}/" class="site-title">
+          <a href="{{ "/" | relative_url }}" class="site-title">
             <span class="logo-text">ZZY</span><span class="accent">博客</span>
           </a>
           <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -35,7 +31,7 @@
           <ul class="nav-links">
             {% for item in site.data.navigation %}
               <li>
-                <a href="{{ site.baseurl }}{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+                <a href="{{ item.link | relative_url }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
               </li>
             {% endfor %}
           </ul>
@@ -64,10 +60,10 @@
           <div class="footer-section links">
             <h3 class="footer-title">快速链接</h3>
             <ul class="footer-links">
-              <li><a href="{{ site.baseurl }}/">首页</a></li>
-              <li><a href="{{ site.baseurl }}/about.html">关于</a></li>
-              <li><a href="{{ site.baseurl }}/blog.html">博客</a></li>
-              <li><a href="{{ site.baseurl }}/categories.html">分类</a></li>
+              <li><a href="{{ "/" | relative_url }}">首页</a></li>
+              <li><a href="{{ "/about.html" | relative_url }}">关于</a></li>
+              <li><a href="{{ "/blog.html" | relative_url }}">博客</a></li>
+              <li><a href="{{ "/categories.html" | relative_url }}">分类</a></li>
             </ul>
           </div>
           <div class="footer-section contact">
