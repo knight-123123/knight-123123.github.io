@@ -1,0 +1,21 @@
+/* 导航 */
+.site-header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+  
+    &.scrolled {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  // 当前链接样式
+  .current {
+    color: $primary-color;
+    font-weight: 700;
+  }

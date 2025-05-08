@@ -1,0 +1,238 @@
+/* 团队页面 */
+.staff-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1.5rem;
+    
+    .staff-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, $primary-color, $secondary-color);
+      }
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .staff-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: $primary-color;
+        
+        a {
+          color: inherit;
+          
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+      
+      .staff-position {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #888;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px dashed #eee;
+      }
+      
+      .staff-bio {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+      
+      .staff-posts {
+        h4 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          color: $primary-color;
+          position: relative;
+          display: inline-block;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $secondary-color;
+            border-radius: 2px;
+          }
+        }
+        
+        ul {
+          list-style: none;
+          padding-left: 0;
+          
+          li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+            
+            &::before {
+              content: '•';
+              position: absolute;
+              left: 0;
+              color: $accent-color;
+            }
+            
+            a {
+              color: #666;
+              
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* 作者档案页面 */
+  .author-profile {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 0 1.5rem; /* 增加外边距 */
+  }
+  
+  .author-header {
+    display: flex;
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, rgba($primary-color, 0.05) 0%, rgba($secondary-color, 0.05) 100%);
+  }
+  
+  .author-avatar {
+    margin-right: 2rem;
+  }
+  
+  .avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .author-info {
+    flex: 1;
+  }
+  
+  .author-name {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: $primary-color;
+    font-family: 'Noto Serif SC', serif;
+  }
+  
+  .author-position {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: $secondary-color;
+      border-radius: 3px;
+    }
+  }
+  
+  .author-social {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: $primary-color;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .author-content {
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .author-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+  }
+  
+  .author-posts {
+    padding: 3rem;
+    
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: $primary-color;
+      position: relative;
+      padding-bottom: 0.8rem;
+      font-family: 'Noto Serif SC', serif;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: $secondary-color;
+        border-radius: 3px;
+      }
+    }
+    
+    .no-posts {
+      color: #888;
+      font-style: italic;
+    }
+  }

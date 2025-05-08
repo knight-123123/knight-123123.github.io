@@ -1,0 +1,37 @@
+/* 页面内容 */
+.page-content {
+    padding: 3rem 0;
+  }
+  
+  .page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding: 0 2rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      border-radius: 3px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+      font-family: 'Noto Serif SC', serif;
+    }
+    
+    p {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }

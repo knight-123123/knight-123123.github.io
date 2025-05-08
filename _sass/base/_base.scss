@@ -1,0 +1,35 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Noto Sans SC', 'Open Sans', sans-serif;
+    line-height: 1.7;
+    color: $text-color;
+    background-color: $background-color;
+    padding-top: 5rem;
+  }
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $accent-color;
+      text-decoration: none;
+    }
+  }
+  
+  /* 当前链接样式 */
+  .current {
+    color: $primary-color;
+    font-weight: 700;
+  }

@@ -1,0 +1,57 @@
+/* 代码高亮 */
+.highlight {
+    background-color: #f8f9fc;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+    position: relative;
+    
+    pre {
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+    
+    .c, .c1, .cm { color: #a0aec0; } /* 注释 */
+    .k, .kd, .kn, .kt { color: $primary-color; } /* 关键字 */
+    .s, .s1, .s2 { color: $secondary-color; } /* 字符串 */
+    .na, .nb { color: #805ad5; } /* 名称 */
+    .nc { color: $accent-color; } /* 类 */
+    .nf { color: #805ad5; } /* 函数 */
+    .o { color: $primary-color; } /* 运算符 */
+    .mi, .mf { color: #3182ce; } /* 数字 */
+  }
+  
+  /* 打印样式 */
+  @media print {
+    body {
+      background-color: white;
+      color: black;
+      font-size: 12pt;
+    }
+    
+    .site-header, .site-footer, .post-navigation, #back-to-top {
+      display: none;
+    }
+    
+    .container {
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .post, .post-content, .post-header, .page-content {
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .post-content a::after {
+      content: " (" attr(href) ")";
+      font-size: 90%;
+      color: #888;
+    }
+    
+    pre, code {
+      border: 1px solid #eee;
+      font-size: 11pt;
+    }
+  }

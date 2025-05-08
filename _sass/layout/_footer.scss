@@ -1,0 +1,103 @@
+/* 页脚 */
+.site-footer {
+    position: relative;
+    padding: 4rem 0 2rem;
+    color: $text-color;
+    background-color: #f2f5f9;
+    margin-top: 5rem;
+    
+    .footer-wave {
+      position: absolute;
+      top: -120px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-title {
+      position: relative;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      color: $primary-color;
+      font-family: 'Noto Serif SC', serif;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(to right, $primary-color, $secondary-color);
+        border-radius: 3px;
+      }
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 0.8rem;
+        
+        a {
+          transition: all 0.3s ease;
+          position: relative;
+          padding-left: 1.5rem;
+          color: #666;
+          
+          &::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+            color: $secondary-color;
+          }
+          
+          &:hover {
+            color: $primary-color;
+            
+            &::before {
+              transform: translateX(3px);
+            }
+          }
+        }
+      }
+    }
+    
+    .footer-section.contact p {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      color: #666;
+      
+      i {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        background-color: rgba($primary-color, 0.1);
+        color: $primary-color;
+        border-radius: 50%;
+      }
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      color: #888;
+    }
+  }

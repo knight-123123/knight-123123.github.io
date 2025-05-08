@@ -1,0 +1,259 @@
+/* 博客文章列表 - 增加内边距 */
+.post-list {
+    list-style: none;
+    padding: 0;
+    
+    .post-item {
+      margin-bottom: 2.5rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .post-link {
+        display: block;
+        color: inherit;
+        padding: 2rem; /* 确保这里有足够的内边距 */
+        
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      
+      .post-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem; /* 减少与元数据的间距 */
+        color: $primary-color;
+        position: relative;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; /* 添加右内边距 */
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 70%;
+          background: linear-gradient(to bottom, $primary-color, $secondary-color);
+          border-radius: 2px;
+        }
+      }
+      
+      .post-meta {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 0.5rem; /* 减少与标题的间距 */
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; /* 确保在小屏幕上能够正确换行 */
+        gap: 0.5rem; /* 元素之间的间距 */
+        padding-left: 1.5rem; /* 增加左内边距 */
+        padding-right: 1.5rem; /* 增加右内边距 */
+      }
+      
+      .post-excerpt {
+        color: #666;
+        line-height: 1.8;
+        position: relative;
+        overflow: hidden;
+        padding-left: 1.5rem; /* 增加左内边距 */
+        padding-right: 1.5rem; /* 增加右内边距 */
+        padding-bottom: 1.5rem; /* 增加底部内边距 */
+        margin-top: 1.5rem; /* 与元数据增加间距 */
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 40px;
+          background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        }
+      }
+      
+      .read-more {
+        display: inline-block;
+        margin-top: 1rem;
+        font-weight: 500;
+        color: $primary-color;
+        position: relative;
+        padding-right: 1.5rem;
+        
+        &::after {
+          content: '→';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease;
+        }
+        
+        &:hover {
+          color: $accent-color;
+          
+          &::after {
+            transform: translate(3px, -50%);
+          }
+        }
+      }
+    }
+  }
+  
+  .featured-post-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .post-top {
+      padding: 1.5rem;
+      border-bottom: 1px dashed #eee;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: $primary-color;
+        
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+    
+    .post-meta {
+      font-size: 0.85rem;
+      color: #888;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem; /* 减少与标题间距 */
+      
+      .meta-item {
+        display: flex;
+        align-items: center;
+        
+        i {
+          margin-right: 0.5rem;
+          color: $secondary-color;
+        }
+      }
+      
+      a {
+        color: $primary-color;
+        font-weight: 500;
+        
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+    
+    .post-excerpt {
+      padding: 1.5rem;
+      color: #666;
+      line-height: 1.7;
+      
+      .read-more {
+        display: inline-block;
+        margin-top: 0.8rem;
+        font-weight: 500;
+        color: $primary-color;
+        position: relative;
+        padding-right: 1.5rem;
+        
+        &::after {
+          content: '→';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease;
+        }
+        
+        &:hover {
+          color: $accent-color;
+          
+          &::after {
+            transform: translate(3px, -50%);
+          }
+        }
+      }
+    }
+  }
+  
+  .about-section {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, transparent 50%, rgba($secondary-color, 0.1) 50%);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: $primary-color;
+      position: relative;
+      padding-bottom: 0.8rem;
+      font-family: 'Noto Serif SC', serif;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: $secondary-color;
+        border-radius: 3px;
+      }
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+      color: #666;
+      line-height: 1.7;
+    }
+  }

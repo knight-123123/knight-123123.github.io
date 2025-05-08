@@ -1,0 +1,126 @@
+/* 分类页面 */
+.categories-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    padding: 1.5rem; /* 增加容器的内边距 */
+  }
+  
+  .category-list {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    position: sticky;
+    top: 7rem;
+    height: fit-content;
+  }
+  
+  .category-tabs {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 1rem;
+    }
+    
+    .category-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      color: $primary-color;
+      transition: all 0.3s ease;
+      
+      &:hover, &.active {
+        background-color: rgba($primary-color, 0.1);
+        text-decoration: none;
+        transform: translateX(5px);
+      }
+      
+      &.active {
+        font-weight: 600;
+        color: white;
+        background-color: $primary-color;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        
+        .category-count {
+          background-color: white;
+          color: $primary-color;
+        }
+      }
+    }
+    
+    .category-count {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      padding: 0.2rem 0.8rem;
+      min-width: 30px;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .category-section {
+    display: none;
+    background-color: white; /* 添加背景色 */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem; /* 增加内边距 */
+    
+    &.active {
+      display: block;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .category-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $primary-color;
+      position: relative;
+      padding-bottom: 1rem;
+      font-family: 'Noto Serif SC', serif;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: $secondary-color;
+        border-radius: 3px;
+      }
+    }
+  }
+  
+  /* 标签显示 */
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+    
+    .tag {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+      }
+    }
+  }

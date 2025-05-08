@@ -1,0 +1,104 @@
+/* 首页样式 */
+.hero-section {
+    text-align: center;
+    padding: 5rem 2rem; /* 增加内边距 */
+    background: linear-gradient(135deg, lighten($primary-color, 30%) 0%, lighten($secondary-color, 20%) 100%);
+    color: white;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+    
+    &::before {
+      width: 300px;
+      height: 300px;
+      bottom: -150px;
+      left: -100px;
+    }
+    
+    &::after {
+      width: 200px;
+      height: 200px;
+      top: -100px;
+      right: -50px;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: $primary-color;
+      font-family: 'Noto Serif SC', serif;
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: $accent-color;
+        border-radius: 3px;
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto;
+      color: $primary-color;
+    }
+  }
+  
+  .home-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 0 1.5rem; /* 增加内边距 */
+  }
+  
+  .featured-posts {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: $primary-color;
+      position: relative;
+      padding-bottom: 0.8rem;
+      font-family: 'Noto Serif SC', serif;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: $secondary-color;
+        border-radius: 3px;
+      }
+    }
+  }
+  
+  .featured-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .view-all {
+    text-align: center;
+    margin-top: 2rem;
+  }

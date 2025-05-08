@@ -1,0 +1,104 @@
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $primary-color;
+      
+      .accent {
+        color: $accent-color;
+      }
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      li {
+        margin-left: 2rem;
+        
+        a {
+          font-weight: 500;
+          padding: 0.5rem;
+          border-radius: 4px;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $secondary-color;
+            transition: width 0.3s ease;
+          }
+          
+          &:hover::after, &.current::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+  // 移动导航
+  .nav-toggle {
+    display: none;
+    
+    &:checked ~ .nav-links {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+    
+    &:checked ~ .nav-toggle-label span {
+      background: transparent;
+      
+      &::before {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      &::after {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+    }
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1.5rem;
+    height: 100%;
+    display: none;
+    align-items: center;
+    
+    span, span::before, span::after {
+      display: block;
+      background: $primary-color;
+      height: 2px;
+      width: 2rem;
+      border-radius: 2px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    span::before, span::after {
+      content: '';
+      position: absolute;
+    }
+    
+    span::before {
+      bottom: 7px;
+    }
+    
+    span::after {
+      top: 7px;
+    }
+  }
