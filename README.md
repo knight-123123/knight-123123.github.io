@@ -187,10 +187,6 @@ $accent-color: #your-color;     // 强调色
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 开启一个 Pull 请求
 
-## 许可证
-
-该项目使用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
-
 ## 联系方式
 
 Zhou Zhouyou - 312847325@qq.com
