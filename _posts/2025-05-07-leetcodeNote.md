@@ -1,5 +1,6 @@
 ---
 layout: post
+title: leetcodeNote
 author: zzy
 categories: [Algorithms, Programming]
 tags: [LeetCode, Dynamic Programming, C++]
