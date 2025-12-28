@@ -5,6 +5,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     padding: 3rem;
     margin: 0 1.5rem; /* 增加外边距 */
+    text-align: left; /* 强制左对齐，覆盖page-header的居中 */
     
     .about-section, .skills-section, .contact-section {
       margin-bottom: 3rem;
