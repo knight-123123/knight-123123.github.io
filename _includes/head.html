@@ -12,6 +12,6 @@
     <meta property="og:site_name" content="{{ site.title }}">
     
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="icon" href="/assets/images/favicon.png">
 </head>
