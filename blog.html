@@ -10,8 +10,10 @@ title: 博客文章列表
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="post-item">
-      <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
-        <h2 class="post-title">{{ post.title }}</h2>
+      <div class="post-card">
+        <h2 class="post-title">
+          <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
         <div class="post-meta">
           <span class="meta-item">
             <i class="far fa-calendar-alt"></i>
@@ -21,23 +23,23 @@ title: 博客文章列表
           {% if author %}
             <span class="meta-item">
               <i class="far fa-user"></i>
-              <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+              <a href="{{ author.url | relative_url }}">{{ author.name }}</a>
             </span>
           {% endif %}
           {% if post.categories.size > 0 %}
             <span class="meta-item">
               <i class="far fa-folder-open"></i>
               {% for category in post.categories %}
-                <a href="{{ site.baseurl }}/categories.html#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                <a href="{{ "/categories.html" | relative_url }}#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
               {% endfor %}
             </span>
           {% endif %}
         </div>
         <div class="post-excerpt">
-          {{ post.excerpt }}
-          <span class="read-more">阅读更多</span>
+          {{ post.excerpt | strip_html | strip_newlines | truncatewords: 32 }}
         </div>
-      </a>
+        <a class="read-more" href="{{ post.url | relative_url }}">阅读更多</a>
+      </div>
     </li>
   {% endfor %}
 </ul>
