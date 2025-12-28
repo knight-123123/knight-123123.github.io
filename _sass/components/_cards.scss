@@ -22,7 +22,7 @@
     .post-link {
       display: flex;
       flex-direction: column;
-      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+      padding: 2rem 1.5rem 2rem 2.8rem;
       color: inherit;
       text-decoration: none;
       flex-grow: 1;
@@ -33,11 +33,11 @@
     }
     
     .post-title {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: #1a252f;
-      margin: 0 0 1rem 0;
-      line-height: 1.7;
+      margin: 0 0 0.6rem 0;
+      line-height: 1.65;
       word-break: break-word;
       text-align: left;
       
@@ -47,24 +47,24 @@
     }
     
     .post-meta {
-      font-size: 0.9rem;
-      color: #7f8c8d;
-      margin-bottom: 1.3rem;
+      font-size: 0.85rem;
+      color: #8b95a5;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.6rem;
+      gap: 1.2rem;
       padding: 0;
       text-align: left;
       
       .meta-item {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         
         i {
           color: $secondary-color;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
         }
         
         a {
@@ -81,10 +81,10 @@
     }
     
     .post-excerpt {
-      color: #555;
-      font-size: 1.1rem;
-      line-height: 1.9;
-      margin: 0 0 1.6rem 0;
+      color: #4a4a4a;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      margin: 0 0 1rem 0;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -100,11 +100,11 @@
     .read-more {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       margin-top: auto;
       color: $primary-color;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       text-decoration: none;
       transition: all 0.2s ease;
       text-align: left;
@@ -136,40 +136,40 @@
   a {
     display: flex;
     flex-direction: column;
-    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    padding: 2rem 1.5rem 2rem 2.8rem;
     color: inherit;
     text-decoration: none;
     flex-grow: 1;
   }
   
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 800;
     color: #1a252f;
-    margin: 0 0 1rem 0;
-    line-height: 1.7;
+    margin: 0 0 0.6rem 0;
+    line-height: 1.65;
     word-break: break-word;
     text-align: left;
   }
   
   .post-meta {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    margin-bottom: 1.3rem;
+    font-size: 0.85rem;
+    color: #8b95a5;
+    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.6rem;
+    gap: 1.2rem;
     text-align: left;
     
     .meta-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       
       i {
         color: $secondary-color;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
       }
     }
     
@@ -188,10 +188,10 @@
   }
   
   .post-excerpt {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    margin: 0 0 1.6rem 0;
+    color: #4a4a4a;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    margin: 0 0 1rem 0;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -207,15 +207,15 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border-left: 6px solid $secondary-color;
-  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  padding: 2rem 1.5rem 2rem 2.8rem;
   margin-bottom: 2.5rem;
   
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 800;
     color: #1a252f;
-    margin: 0 0 1.3rem 0;
-    line-height: 1.7;
+    margin: 0 0 0.9rem 0;
+    line-height: 1.65;
     text-align: left;
     
     &::after {
@@ -224,10 +224,10 @@
   }
   
   p {
-    color: #555;
-    line-height: 1.95;
-    margin: 0 0 1.3rem 0;
-    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin: 0 0 1rem 0;
+    font-size: 1.15rem;
     text-align: left;
   }
   
@@ -236,14 +236,14 @@
   }
   
   ul, ol {
-    margin: 0 0 1.3rem 0;
-    padding-left: 2rem;
-    color: #555;
+    margin: 0 0 1rem 0;
+    padding-left: 1.8rem;
+    color: #4a4a4a;
     
     li {
-      margin-bottom: 0.7rem;
-      line-height: 1.95;
-      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.8;
+      font-size: 1.15rem;
     }
   }
 }
