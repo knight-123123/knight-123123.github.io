@@ -1,28 +1,6 @@
 ---
 layout: default
 title: Staff
+published: false
 ---
-<div class="page-header">
-  <h1>我们的团队</h1>
-  <p>认识网站背后的人</p>
-</div>
-
-<div class="staff-list">
-  {% for author in site.authors %}
-    <div class="staff-card">
-      <h2 class="staff-name"><a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a></h2>
-      <h3 class="staff-position">{{ author.position }}</h3>
-      <div class="staff-bio">{{ author.content | markdownify }}</div>
-      
-      <div class="staff-posts">
-        <h4>近期文章</h4>
-        <ul>
-          {% assign filtered_posts = site.posts | where: 'author', author.short_name | limit: 2 %}
-          {% for post in filtered_posts %}
-            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+<!-- Staff 页面已废弃：请使用 About 页面。 -->

@@ -42,3 +42,7 @@ include: ['_pages']
 sass:
   sass_dir: _sass
   style: compressed  # 生产环境中压缩 CSS
+
+# 不生成已废弃页面
+exclude:
+  - staff.html
