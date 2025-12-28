@@ -25,10 +25,10 @@
             <span class="logo-text">ZZY</span><span class="accent">博客</span>
           </a>
           <input type="checkbox" id="nav-toggle" class="nav-toggle">
-          <label for="nav-toggle" class="nav-toggle-label">
+          <label for="nav-toggle" class="nav-toggle-label" role="button" aria-label="切换导航菜单" aria-controls="nav-links" aria-expanded="false">
             <span></span>
           </label>
-          <ul class="nav-links">
+          <ul class="nav-links" id="nav-links">
             
               <li>
                 <a href="/" >Home</a>
@@ -126,6 +126,8 @@
       // 滚动效果
       const header = document.getElementById("site-header");
       const backToTopButton = document.getElementById("back-to-top");
+      const navToggle = document.getElementById("nav-toggle");
+      const navToggleLabel = document.querySelector(".nav-toggle-label");
       
       window.onscroll = function() {
         // 头部滚动阴影效果
@@ -143,6 +145,14 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       });
+
+      if (navToggle && navToggleLabel) {
+        function syncExpanded() {
+          navToggleLabel.setAttribute("aria-expanded", navToggle.checked ? "true" : "false");
+        }
+        navToggle.addEventListener("change", syncExpanded);
+        syncExpanded();
+      }
     </script>
   </body>
 </html>
