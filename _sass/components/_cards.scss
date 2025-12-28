@@ -1,46 +1,61 @@
-/* 博客文章卡片 - 简洁现代设计 */
+/* 博客文章卡片 - 现代简约设计 */
 .post-list {
   list-style: none;
   padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
 
   .post-item {
-    margin-bottom: 2.5rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border-left: 6px solid $primary-color;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
     
-    &:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      transform: translateY(-2px);
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
+      border-radius: 12px 0 0 12px;
+      opacity: 0.8;
     }
     
-    .post-link {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.5rem 2rem 2.8rem;
-      color: inherit;
-      text-decoration: none;
-      flex-grow: 1;
+    &:hover {
+      box-shadow: 0 4px 12px rgba(74, 111, 165, 0.15);
+      transform: translateX(4px);
+      border-color: rgba(74, 111, 165, 0.1);
       
-      &:hover {
-        text-decoration: none;
+      &::before {
+        width: 5px;
+        opacity: 1;
+      }
+      
+      .post-title {
+        color: $primary-color;
       }
     }
     
+    .post-link {
+      display: block;
+      padding: 2rem 2.5rem;
+      color: inherit;
+      text-decoration: none;
+    }
+    
     .post-title {
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: #1a252f;
-      margin: 0 0 0.6rem 0.5rem;
-      padding-left: 1.2rem;
-      line-height: 1.65;
-      word-break: break-word;
-      text-align: left;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+      transition: color 0.2s ease;
       
       &::before {
         display: none;
@@ -48,21 +63,26 @@
     }
     
     .post-meta {
-      font-size: 0.85rem;
-      color: #8b95a5;
-      margin-bottom: 0.8rem;
-      margin-left: 0.5rem;
-      padding-left: 1.2rem;
+      font-size: 0.875rem;
+      color: #7f8c8d;
+      margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      text-align: left;
+      gap: 0.5rem;
+      padding: 0;
       
       .meta-item {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.35rem;
+        padding: 0.25rem 0.75rem;
+        background-color: rgba(99, 198, 174, 0.08);
+        border-radius: 20px;
+        
+        &::after {
+          display: none;
+        }
         
         i {
           color: $secondary-color;
@@ -70,30 +90,27 @@
         }
         
         a {
-          color: $secondary-color;
-          font-weight: 600;
+          color: #5a6c7d;
+          font-weight: 500;
           text-decoration: none;
           transition: color 0.2s ease;
           
           &:hover {
-            color: $accent-color;
+            color: $secondary-color;
           }
         }
       }
     }
     
     .post-excerpt {
-      color: #4a4a4a;
-      font-size: 1.15rem;
-      line-height: 1.75;
-      margin: 0 0 1rem 0.5rem;
-      padding-left: 1.2rem;
+      color: #5a6c7d;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0 0 1.5rem 0;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      flex-grow: 1;
-      text-align: left;
       
       &::after {
         display: none;
@@ -104,19 +121,27 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      margin-top: auto;
-      margin-left: 0.5rem;
-      padding-left: 1.2rem;
+      padding: 0.5rem 1rem;
       color: $primary-color;
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
       text-decoration: none;
+      background-color: rgba(74, 111, 165, 0.05);
+      border-radius: 6px;
       transition: all 0.2s ease;
-      text-align: left;
+      
+      &::after {
+        content: '→';
+        transition: transform 0.2s ease;
+      }
       
       &:hover {
-        color: $accent-color;
-        transform: translateX(4px);
+        background-color: rgba(74, 111, 165, 0.1);
+        transform: translateX(2px);
+        
+        &::after {
+          transform: translateX(3px);
+        }
       }
     }
   }
@@ -124,56 +149,77 @@
 
 /* 特色文章卡片 - 首页 */
 .featured-post-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid $secondary-color;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, $secondary-color 0%, $primary-color 100%);
+    border-radius: 12px 0 0 12px;
+    opacity: 0.8;
+  }
   
   &:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 198, 174, 0.15);
+    transform: translateX(4px);
+    border-color: rgba(99, 198, 174, 0.1);
+    
+    &::before {
+      width: 5px;
+      opacity: 1;
+    }
+    
+    h3 {
+      color: $secondary-color;
+    }
   }
   
   a {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem 2rem 2.8rem;
+    display: block;
+    padding: 2rem 2.5rem;
     color: inherit;
     text-decoration: none;
-    flex-grow: 1;
   }
   
   h3 {
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #1a252f;
-    margin: 0 0 0.6rem 0.5rem;
-    padding-left: 1.2rem;
-    line-height: 1.65;
-    word-break: break-word;
-    text-align: left;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+    transition: color 0.2s ease;
   }
   
   .post-meta {
-    font-size: 0.85rem;
-    color: #8b95a5;
-    margin-bottom: 0.8rem;
-    margin-left: 0.5rem;
-    padding-left: 1.2rem;
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.2rem;
-    text-align: left;
+    gap: 0.5rem;
     
     .meta-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      background-color: rgba(99, 198, 174, 0.08);
+      border-radius: 20px;
+      
+      &::after {
+        display: none;
+      }
       
       i {
         color: $secondary-color;
@@ -182,64 +228,78 @@
     }
     
     a {
-      color: $secondary-color;
-      font-weight: 600;
+      color: #5a6c7d;
+      font-weight: 500;
       padding: 0;
       display: inline;
       text-decoration: none;
       transition: color 0.2s ease;
       
       &:hover {
-        color: $accent-color;
+        color: $secondary-color;
       }
     }
   }
   
   .post-excerpt {
-    color: #4a4a4a;
-    font-size: 1.15rem;
-    line-height: 1.75;
-    margin: 0 0 1rem 0.5rem;
-    padding-left: 1.2rem;
+    color: #5a6c7d;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    flex-grow: 1;
-    text-align: left;
   }
 }
 
 /* 关于页面卡片 */
 .about-section {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid $secondary-color;
-  padding: 2rem 1.5rem 2rem 2.8rem;
-  margin-bottom: 2.5rem;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, $secondary-color 0%, $accent-color 100%);
+    border-radius: 12px 0 0 12px;
+    opacity: 0.8;
+  }
   
   h2 {
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #1a252f;
-    margin: 0 0 0.9rem 0.5rem;
-    padding-left: 1.2rem;
-    line-height: 1.65;
-    text-align: left;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+    position: relative;
     
     &::after {
-      display: none;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.5rem;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, $secondary-color, transparent);
+      border-radius: 2px;
     }
   }
   
   p {
-    color: #4a4a4a;
+    color: #5a6c7d;
     line-height: 1.8;
-    margin: 0 0 1rem 0.5rem;
-    padding-left: 1.2rem;
-    font-size: 1.15rem;
-    text-align: left;
+    margin: 0 0 1.25rem 0;
+    font-size: 1rem;
   }
   
   p:last-child {
@@ -247,14 +307,19 @@
   }
   
   ul, ol {
-    margin: 0 0 1rem 0;
-    padding-left: 1.8rem;
-    color: #4a4a4a;
+    margin: 0 0 1.25rem 0;
+    padding-left: 1.5rem;
+    color: #5a6c7d;
     
     li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
       line-height: 1.8;
-      font-size: 1.15rem;
+      font-size: 1rem;
+      position: relative;
+      
+      &::marker {
+        color: $secondary-color;
+      }
     }
   }
 }
