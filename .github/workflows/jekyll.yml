@@ -22,7 +22,7 @@ jobs:
       - name: Setup Ruby, Bundler, and Jekyll 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0' # 或者您在 Gemfile 中指定的 Ruby 版本
+          ruby-version: '3.2' # 升级到 Ruby 3.2 以兼容最新 gems
           bundler-cache: true # Caches gems for faster builds
 
       - name: Build Jekyll site 🔨
