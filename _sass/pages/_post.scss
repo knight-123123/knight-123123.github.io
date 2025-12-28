@@ -58,7 +58,7 @@
         font-size: 1.8rem;
         margin: 2rem 0 1.2rem;
         color: $primary-color;
-        display: inline-block;
+        display: block;
         position: relative;
         
         &::after {
@@ -77,7 +77,7 @@
         font-size: 1.5rem;
         margin: 1.8rem 0 1rem;
         color: $primary-color;
-        display: inline-block;
+        display: block;
         position: relative;
         
         &::after {
@@ -96,7 +96,7 @@
         font-size: 1.3rem;
         margin: 1.5rem 0 0.8rem;
         color: $primary-color;
-        display: inline-block;
+        display: block;
         position: relative;
         
         &::after {
