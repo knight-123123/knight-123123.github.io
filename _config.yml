@@ -8,6 +8,7 @@ baseurl: ""  # 确保为空，按照你的GitHub仓库配置
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title:output_ext
+future: true
 
 kramdown:
   input: GFM

@@ -1,0 +1,102 @@
+---
+layout: default
+title: tags
+---
+<div class="page-header">
+  <h1>文章标签</h1>
+  <p>按标签浏览文章</p>
+</div>
+
+<div class="categories-container">
+  {% assign tags = site.tags | sort %}
+
+  <div class="category-list">
+    <ul class="category-tabs">
+      {% for tag in tags %}
+        {% assign tag_name = tag | first %}
+        <li>
+          <a href="#{{ tag_name | slugify }}" class="category-link" id="category-link-{{ tag_name | slugify }}">
+            {{ tag_name }}
+            <span class="category-count">{{ site.tags[tag_name].size }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="category-content">
+    {% for tag in tags %}
+      {% assign tag_name = tag | first %}
+      <div id="{{ tag_name | slugify }}" class="category-section" data-category="{{ tag_name | slugify }}">
+        <h2 class="category-title">{{ tag_name }}</h2>
+        <ul class="post-list">
+          {% for post in site.tags[tag_name] %}
+            <li class="post-item">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
+                <h3 class="post-title">{{ post.title }}</h3>
+                <div class="post-meta">
+                  <span class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ post.date | date: "%Y-%m-%d" }}
+                  </span>
+                  {% assign author = site.authors | where: 'short_name', post.author | first %}
+                  {% if author %}
+                    <span class="meta-item">
+                      <i class="far fa-user"></i>
+                      <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+                    </span>
+                  {% endif %}
+                </div>
+                <div class="post-excerpt">
+                  {{ post.excerpt | truncatewords: 20 }}
+                  <span class="read-more">阅读更多</span>
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const firstSection = document.querySelector('.category-section');
+    const firstLink = document.querySelector('.category-link');
+
+    if (firstSection && firstLink) {
+      firstSection.classList.add('active');
+      firstLink.classList.add('active');
+    }
+
+    const links = document.querySelectorAll('.category-link');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+
+        const sections = document.querySelectorAll('.category-section');
+        sections.forEach(section => section.classList.remove('active'));
+        links.forEach(link => link.classList.remove('active'));
+
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          this.classList.add('active');
+          if (window.innerWidth <= 768) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const targetLink = document.getElementById(`category-link-${hash}`);
+      if (targetLink) {
+        targetLink.click();
+      }
+    }
+  });
+</script>
