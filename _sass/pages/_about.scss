@@ -8,6 +8,7 @@
     
     .about-section, .skills-section, .contact-section {
       margin-bottom: 3rem;
+      text-align: center;
       
       h2 {
         font-size: 1.8rem;
@@ -21,8 +22,9 @@
           content: '';
           display: block;
           width: 100%;
+          max-width: $underline-max-width;
           height: 3px;
-          margin-top: 0.5rem;
+          margin: 0.5rem auto 0;
           background: $secondary-color;
           border-radius: 3px;
         }

@@ -220,6 +220,7 @@
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    text-align: center;
     
     &::before {
       content: '';
@@ -243,8 +244,9 @@
         content: '';
         display: block;
         width: 100%;
+        max-width: $underline-max-width;
         height: 3px;
-        margin-top: 0.5rem;
+        margin: 0.5rem auto 0;
         background: $secondary-color;
         border-radius: 3px;
       }
