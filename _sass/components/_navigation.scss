@@ -28,6 +28,7 @@
           padding: 0.5rem;
           border-radius: 4px;
           position: relative;
+          transition: color 0.2s ease;
           
           &::after {
             content: '';
@@ -41,6 +42,13 @@
           }
           
           &:hover::after, &.current::after {
+            width: 100%;
+          }
+
+          &:focus-visible {
+            outline: none;
+          }
+          &:focus-visible::after {
             width: 100%;
           }
         }
