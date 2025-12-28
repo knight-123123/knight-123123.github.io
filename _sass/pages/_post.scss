@@ -289,10 +289,9 @@
         background-color: rgba($secondary-color, 0.06);
       }
     }
-  }
-  
-  /* 文章导航 */
-  .post-navigation {
+    
+    /* 文章导航 */
+    .post-navigation {
     margin-top: 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -349,9 +348,9 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       }
     }
-  }
+    }
 
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     padding: 1.6rem 1.35rem 1.4rem;
     margin: 1.5rem auto;
 
@@ -367,3 +366,5 @@
       }
     }
   }
+
+}
