@@ -28,7 +28,7 @@
           padding: 0.5rem;
           border-radius: 4px;
           position: relative;
-          transition: color 0.2s ease;
+          transition: color 0.2s ease, background-color 0.2s ease;
           
           &::after {
             content: '';
@@ -51,6 +51,12 @@
           &:focus-visible::after {
             width: 100%;
           }
+
+          &.current {
+            background-color: rgba($secondary-color, 0.15);
+            border-radius: 999px;
+            padding: 0.5rem 0.75rem;
+          }
         }
       }
     }
@@ -61,8 +67,9 @@
     display: none;
     
     &:checked ~ .nav-links {
-      transform: scale(1, 1);
+      transform: translateY(0) scale(1, 1);
       opacity: 1;
+      will-change: transform, opacity;
     }
     
     &:checked ~ .nav-toggle-label span {
@@ -86,6 +93,7 @@
     height: 100%;
     display: none;
     align-items: center;
+    cursor: pointer;
     
     span, span::before, span::after {
       display: block;
