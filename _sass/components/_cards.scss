@@ -7,21 +7,26 @@
     margin-bottom: 2rem;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border-left: 4px solid $primary-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid $primary-color;
     transition: all 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     
     &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      transform: translateX(4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
     }
     
     .post-link {
-      display: block;
-      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1.8rem;
+      padding-left: 1.8rem;
       color: inherit;
       text-decoration: none;
+      flex-grow: 1;
       
       &:hover {
         text-decoration: none;
@@ -29,11 +34,12 @@
     }
     
     .post-title {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      color: $primary-color;
-      margin: 0 0 0.5rem 0;
-      line-height: 1.4;
+      color: #2c3e50;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.5;
+      word-break: break-word;
       
       &::before {
         display: none;
@@ -41,28 +47,30 @@
     }
     
     .post-meta {
-      font-size: 0.8rem;
-      color: #888;
-      margin-bottom: 0.8rem;
+      font-size: 0.75rem;
+      color: #95a5a6;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.2rem;
       padding: 0;
       
       .meta-item {
         display: flex;
         align-items: center;
-        gap: 0.3rem;
+        gap: 0.4rem;
         
         i {
           color: $secondary-color;
-          font-size: 0.75rem;
+          font-size: 0.7rem;
         }
         
         a {
           color: $secondary-color;
           font-weight: 500;
+          text-decoration: none;
+          transition: color 0.2s ease;
           
           &:hover {
             color: $accent-color;
@@ -72,14 +80,15 @@
     }
     
     .post-excerpt {
-      color: #666;
+      color: #555;
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0.8rem 0 0 0;
+      line-height: 1.7;
+      margin: 0 0 1.2rem 0;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      flex-grow: 1;
       
       &::after {
         display: none;
@@ -87,16 +96,19 @@
     }
     
     .read-more {
-      display: inline-block;
-      margin-top: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
       color: $primary-color;
       font-weight: 500;
       font-size: 0.9rem;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.2s ease;
       
       &:hover {
         color: $accent-color;
+        transform: translateX(4px);
       }
     }
   }
@@ -106,48 +118,53 @@
 .featured-post-card {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid $secondary-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid $secondary-color;
   transition: all 0.3s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   
   &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateX(4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
   }
   
   a {
-    display: block;
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem;
     color: inherit;
     text-decoration: none;
+    flex-grow: 1;
   }
   
   h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: $primary-color;
-    margin: 0 0 0.5rem 0;
-    line-height: 1.4;
+    color: #2c3e50;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+    word-break: break-word;
   }
   
   .post-meta {
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    color: #95a5a6;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.2rem;
     
     .meta-item {
       display: flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.4rem;
       
       i {
         color: $secondary-color;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
     }
     
@@ -156,6 +173,8 @@
       font-weight: 500;
       padding: 0;
       display: inline;
+      text-decoration: none;
+      transition: color 0.2s ease;
       
       &:hover {
         color: $accent-color;
@@ -164,14 +183,15 @@
   }
   
   .post-excerpt {
-    color: #666;
+    color: #555;
     font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
+    line-height: 1.7;
+    margin: 0 0 1.2rem 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    flex-grow: 1;
   }
 }
 
@@ -179,15 +199,17 @@
 .about-section {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid $secondary-color;
-  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid $secondary-color;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
   
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: $primary-color;
-    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.5;
     
     &::after {
       display: none;
@@ -195,13 +217,24 @@
   }
   
   p {
-    color: #666;
-    line-height: 1.7;
+    color: #555;
+    line-height: 1.8;
     margin: 0 0 1rem 0;
     font-size: 0.95rem;
   }
   
   p:last-child {
     margin-bottom: 0;
+  }
+  
+  ul, ol {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+    color: #555;
+    
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
   }
 }
