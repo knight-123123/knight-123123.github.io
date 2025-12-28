@@ -44,8 +44,9 @@
         content: '';
         display: block;
         width: 100%;
+        max-width: $underline-max-width;
         height: 3px;
-        margin-top: 0.5rem;
+        margin: 0.5rem auto 0;
         background: $accent-color;
         border-radius: 3px;
       }

@@ -76,12 +76,38 @@
         font-size: 1.5rem;
         margin: 1.8rem 0 1rem;
         color: $primary-color;
+        display: inline-block;
+        position: relative;
+        
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          max-width: $underline-max-width;
+          height: 3px;
+          margin-top: 0.35rem;
+          background-color: $secondary-color;
+          border-radius: 3px;
+        }
       }
       
       h4 {
         font-size: 1.3rem;
         margin: 1.5rem 0 0.8rem;
         color: $primary-color;
+        display: inline-block;
+        position: relative;
+        
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          max-width: $underline-max-width;
+          height: 3px;
+          margin-top: 0.3rem;
+          background-color: $secondary-color;
+          border-radius: 3px;
+        }
       }
       
       p {
