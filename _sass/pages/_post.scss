@@ -65,11 +65,11 @@
           content: '';
           display: block;
           width: 100%;
+          max-width: $underline-max-width;
           height: 3px;
           margin-top: 0.4rem;
           background-color: $secondary-color;
           border-radius: 3px;
-        }
       }
       
       h3 {
