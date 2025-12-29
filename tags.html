@@ -32,7 +32,7 @@ title: tags
         <ul class="post-list">
           {% for post in site.tags[tag_name] %}
             <li class="post-item">
-              <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
+              <a href="{{ post.url | relative_url }}" class="post-link">
                 <h3 class="post-title">{{ post.title }}</h3>
                 <div class="post-meta">
                   <span class="meta-item">
@@ -43,12 +43,12 @@ title: tags
                   {% if author %}
                     <span class="meta-item">
                       <i class="far fa-user"></i>
-                      <a href="{{ site.baseurl }}{{ author.url }}">{{ author.name }}</a>
+                      <a href="{{ author.url | relative_url }}">{{ author.name }}</a>
                     </span>
                   {% endif %}
                 </div>
                 <div class="post-excerpt">
-                  {{ post.excerpt | truncatewords: 20 }}
+                  {{ post.excerpt | strip_html | strip_newlines | truncatewords: 20 }}
                   <span class="read-more">阅读更多</span>
                 </div>
               </a>

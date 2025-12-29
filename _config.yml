@@ -10,6 +10,9 @@ highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title:output_ext
 future: true
 
+# 摘要分隔符：在文章里插入 <!--more--> 来控制列表页摘要
+excerpt_separator: "<!--more-->"
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge

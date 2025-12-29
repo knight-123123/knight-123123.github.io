@@ -1,5 +1,20 @@
-<nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}"{% if page.url == item.link %} class="current"{% endif %}>{{ item.name }}</a>
-  {% endfor %}
-</nav>
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="site-nav">
+      <a href="{{ "/" | relative_url }}" class="site-title">
+        <span class="logo-text">ZZY</span><span class="accent">博客</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" role="button" aria-label="切换导航菜单" aria-controls="nav-links" aria-expanded="false">
+        <span></span>
+      </label>
+      <ul class="nav-links" id="nav-links">
+        {% for item in site.data.navigation %}
+          <li>
+            <a href="{{ item.link | relative_url }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
