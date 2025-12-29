@@ -26,7 +26,8 @@ title: About
   
   <div class="contact-section">
     <h2>联系方式</h2>
-    <p>有问题或想要联系？欢迎通过以下渠道与我联系：</p>
+    <p>有问题或想要联系？欢迎通过以下渠道与我联系：
+    </p>
     
     <ul class="contact-list">
       <li><strong>邮箱：</strong><a href="mailto:312847325@qq.com">312847325@qq.com</a></li>
