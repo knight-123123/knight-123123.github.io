@@ -2,9 +2,10 @@
 <html lang="zh-CN">
   {% include head.html %}
   <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     {% include navigation.html %}
 
-    <main class="page-content">
+    <main id="main-content" class="page-content">
       <div class="container {% if page.url == '/' %}home-container{% endif %}">
         {{ content }}
       </div>

@@ -17,6 +17,10 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
 # 集合
 collections:
   authors:
