@@ -1,8 +1,8 @@
 # Copilot Instructions for this Repo
-- Project: Personal Jekyll blog in Chinese; source lives in Jekyll-friendly folders, with built output committed under [_site](_site) (treat as generated, do not hand-edit).
+- Project: Personal Jekyll blog in Chinese; source lives in Jekyll-friendly folders. `_site/` is generated build output (treat as generated, do not hand-edit, do not commit on `main`).
 - Stack: Jekyll 4.x with kramdown + rouge; Sass compiled by Jekyll via Front Matter in [assets/css/styles.scss](assets/css/styles.scss); Ruby gems declared in [Gemfile](Gemfile).
 - Dev setup: `bundle install`, then `bundle exec jekyll serve` for local preview (default http://localhost:4000); `bundle exec jekyll build` writes to `_site`.
-- Deployment: GitHub Actions workflow stored at [.github/workflows/jekyll.tml](.github/workflows/jekyll.tml) builds with Ruby 3.0 and publishes `_site` via `peaceiris/actions-gh-pages` on pushes to `main` or manual dispatch.
+- Deployment: GitHub Actions workflow stored at [.github/workflows/jekyll.yml](.github/workflows/jekyll.yml) builds and publishes generated `_site` via `peaceiris/actions-gh-pages` on pushes to `main` or manual dispatch.
 - Site config: [_config.yml](_config.yml) sets permalink `/:categories/:year/:month/:day/:title:output_ext`, default layout `default`, authors collection output enabled, Sass dir `_sass` with compressed output.
 - Navigation: Menu items come from [_data/navigation.yml](_data/navigation.yml); default layout iterates this list to render header links.
 - Layouts: [ _layouts/default.html ](_layouts/default.html) wires fonts (Noto Sans/Serif SC), Font Awesome, nav/footer, and wraps page content with container classes. [ _layouts/post.html ](_layouts/post.html) renders meta (date, author link from `page.author` lookup, categories/tags with slugged anchors) plus prev/next links. [ _layouts/author.html ](_layouts/author.html) builds an author profile and lists posts whose `author` matches the file’s `short_name`.
