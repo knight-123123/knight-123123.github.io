@@ -91,6 +91,15 @@
 > 说明：使用 GitHub Actions 部署时，`_site/` 是构建产物（生成目录），不建议提交到 `main` 分支。
 > 仓库已通过 `.gitignore` 忽略 `_site/`，由 CI 在部署时自动生成并发布到 `gh-pages`。
 
+如果你的仓库历史上已经提交过 `_site/`，建议执行一次“取消跟踪”（不会删除你本地文件，只是让 Git 不再把它当源码）：
+
+```bash
+git rm -r --cached _site
+git add .
+git commit -m "Stop tracking _site build output"
+git push
+```
+
 ### 手动部署
 
 如果您想手动部署到其他平台:
