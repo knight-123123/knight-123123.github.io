@@ -56,8 +56,10 @@ layout: default
       <ul class="post-list">
         {% for post in filtered_posts %}
           <li class="post-item">
-            <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">
-              <h3 class="post-title">{{ post.title }}</h3>
+            <div class="post-card">
+              <h3 class="post-title">
+                <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
               <div class="post-meta">
                 <span class="meta-item">
                   <i class="far fa-calendar-alt"></i>
@@ -67,16 +69,16 @@ layout: default
                   <span class="meta-item">
                     <i class="far fa-folder-open"></i>
                     {% for category in post.categories %}
-                      <a href="{{ site.baseurl }}/categories.html#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                      <a href="{{ "/categories.html" | relative_url }}#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
                     {% endfor %}
                   </span>
                 {% endif %}
               </div>
               <div class="post-excerpt">
-                {{ post.excerpt | truncatewords: 30 }}
-                <span class="read-more">阅读更多</span>
+                {{ post.excerpt | strip_html | strip_newlines | truncatewords: 30 }}
               </div>
-            </a>
+              <a class="read-more" href="{{ post.url | relative_url }}">阅读更多</a>
+            </div>
           </li>
         {% endfor %}
       </ul>
