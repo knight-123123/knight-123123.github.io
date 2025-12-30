@@ -27,13 +27,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2' # 升级到 Ruby 3.2 以兼容最新 gems
-          # 注意：bundler-cache=true 会启用 deployment/frozen 行为，
-          # 当 Gemfile 更新但 Gemfile.lock 未提交时会导致 CI 直接失败。
-          # 等你本地更新并提交 Gemfile.lock 后，可以再改回 true 以提速。
-          bundler-cache: false
-
-      - name: Install gems 📦
-        run: bundle install
+          # bundler-cache 会使用 Gemfile.lock 进行可复现安装并启用缓存提速。
+          # 重要：当 Gemfile 变更（新增/升级 gem）时，请先在本地运行 bundle install 并提交 Gemfile.lock。
+          bundler-cache: true
 
       - name: Build Jekyll site 🔨
         run: bundle exec jekyll build
