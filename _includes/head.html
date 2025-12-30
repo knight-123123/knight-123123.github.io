@@ -2,14 +2,114 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        {%- assign meta_title = page.title | default: site.title -%}
+        {%- assign meta_description = page.description | default: site.description -%}
+        {%- assign meta_description = meta_description | strip_html | strip_newlines -%}
+        {%- assign canonical_url = page.url | replace: 'index.html', '' | absolute_url -%}
+        {%- assign site_url = site.url | append: site.baseurl -%}
+        {%- assign is_post = false -%}
+        {%- if page.layout == 'post' or page.collection == 'posts' -%}
+            {%- assign is_post = true -%}
+        {%- endif -%}
+        {%- assign meta_image = page.image | default: site.og_image -%}
+        {%- assign meta_image_abs = nil -%}
+        {%- if meta_image -%}
+            {%- if meta_image contains '://' -%}
+                {%- assign meta_image_abs = meta_image -%}
+            {%- else -%}
+                {%- assign meta_image_abs = meta_image | relative_url | absolute_url -%}
+            {%- endif -%}
+        {%- endif -%}
 
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | relative_url | prepend: site.url }}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <link rel="canonical" href="{{ canonical_url }}">
+
+        <title>{{ meta_title }}{% if page.title %} | {{ site.title }}{% endif %}</title>
+        <meta name="description" content="{{ meta_description }}">
+
+        <meta property="og:title" content="{{ meta_title }}">
+        <meta property="og:type" content="{% if is_post %}article{% else %}website{% endif %}">
+        <meta property="og:url" content="{{ canonical_url }}">
+        <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:site_name" content="{{ site.title }}">
+        <meta property="og:locale" content="zh_CN">
+
+        {% if meta_image_abs %}
+            <meta property="og:image" content="{{ meta_image_abs }}">
+        {% endif %}
+
+        {% if is_post %}
+            {%- assign author_obj = site.authors | where: 'short_name', page.author | first -%}
+            {%- assign author_name = author_obj.name | default: page.author | default: site.title -%}
+            {%- assign keyword_list = '' -%}
+            {%- if page.tags and page.tags.size > 0 -%}
+                {%- assign keyword_list = page.tags | join: ', ' -%}
+            {%- endif -%}
+
+            <meta name="author" content="{{ author_name }}">
+            {% if keyword_list != '' %}
+                <meta name="keywords" content="{{ keyword_list }}">
+            {% endif %}
+
+            <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+            {% if page.last_modified_at %}
+                <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+            {% endif %}
+        {% endif %}
+
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | absolute_url }}">
+
+        <meta name="twitter:card" content="{% if meta_image %}summary_large_image{% else %}summary{% endif %}">
+        <meta name="twitter:title" content="{{ meta_title }}">
+        <meta name="twitter:description" content="{{ meta_description }}">
+        {% if meta_image_abs %}
+            <meta name="twitter:image" content="{{ meta_image_abs }}">
+        {% endif %}
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": {{ site.title | jsonify }},
+                "url": {{ site_url | jsonify }},
+                "description": {{ site.description | strip_html | strip_newlines | jsonify }},
+                "inLanguage": "zh-CN"
+            }
+        </script>
+
+        {% if is_post %}
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": {{ meta_title | jsonify }},
+                    "description": {{ meta_description | jsonify }},
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": {{ canonical_url | jsonify }}
+                    },
+                    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+                    "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+                    "author": {
+                        "@type": "Person",
+                        "name": {{ author_name | jsonify }}
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": {{ site.title | jsonify }},
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": {{ "/assets/images/favicon.png" | absolute_url | jsonify }}
+                        }
+                    }
+                    {% if meta_image_abs %},
+                    "image": [{{ meta_image_abs | jsonify }}]
+                    {% endif %}
+                    {% if keyword_list != '' %},
+                    "keywords": {{ keyword_list | jsonify }}
+                    {% endif %}
+                }
+            </script>
+        {% endif %}
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
