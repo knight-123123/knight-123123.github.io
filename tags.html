@@ -32,8 +32,10 @@ title: tags
         <ul class="post-list">
           {% for post in site.tags[tag_name] %}
             <li class="post-item">
-              <a href="{{ post.url | relative_url }}" class="post-link">
-                <h3 class="post-title">{{ post.title }}</h3>
+              <div class="post-card">
+                <h3 class="post-title">
+                  <a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
                 <div class="post-meta">
                   <span class="meta-item">
                     <i class="far fa-calendar-alt"></i>
@@ -49,9 +51,9 @@ title: tags
                 </div>
                 <div class="post-excerpt">
                   {{ post.excerpt | strip_html | strip_newlines | truncatewords: 20 }}
-                  <span class="read-more">阅读更多</span>
                 </div>
-              </a>
+                <a class="read-more" href="{{ post.url | relative_url }}">阅读更多</a>
+              </div>
             </li>
           {% endfor %}
         </ul>
